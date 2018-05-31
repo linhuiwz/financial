@@ -29,6 +29,7 @@
     <orderEntry type="library" name="Gradle: com.h2database:h2:1.4.195" level="project" />
     <orderEntry type="library" name="Gradle: com.hazelcast:hazelcast-spring:3.8.6" level="project" />
     <orderEntry type="library" name="Gradle: com.hazelcast:hazelcast:3.8.6" level="project" />
+    <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.29" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:1.5.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-aop:1.5.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-jdbc:1.5.4.RELEASE" level="project" />
@@ -44,6 +45,8 @@
     <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-jpa:1.11.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-aspects:4.3.9.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.8" level="project" />
+    <orderEntry type="library" name="Gradle: io.springfox:springfox-swagger2:2.7.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.springfox:springfox-swagger-ui:2.7.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:1.5.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test:1.5.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: com.jayway.jsonpath:json-path:2.2.0" level="project" />
@@ -56,9 +59,7 @@
     <orderEntry type="library" name="Gradle: org.springframework:spring-test:4.3.9.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:1.5.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot:1.5.4.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: io.springfox:springfox-swagger2:2.7.0" level="project" />
     <orderEntry type="library" name="Gradle: io.springfox:springfox-swagger-common:2.7.0" level="project" />
-    <orderEntry type="library" name="Gradle: io.springfox:springfox-swagger-ui:2.7.0" level="project" />
     <orderEntry type="library" name="Gradle: io.springfox:springfox-spring-web:2.7.0" level="project" />
     <orderEntry type="library" name="Gradle: io.springfox:springfox-schema:2.7.0" level="project" />
     <orderEntry type="library" name="Gradle: io.springfox:springfox-spi:2.7.0" level="project" />
@@ -99,6 +100,9 @@
     <orderEntry type="library" name="Gradle: org.slf4j:jul-to-slf4j:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:log4j-over-slf4j:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Gradle: io.swagger:swagger-annotations:1.5.13" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.guava:guava:20.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.mapstruct:mapstruct:1.1.0.Final" level="project" />
     <orderEntry type="library" name="Gradle: net.minidev:json-smart:2.2.1" level="project" />
     <orderEntry type="library" name="Gradle: org.objenesis:objenesis:2.1" level="project" />
     <orderEntry type="library" name="Gradle: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" level="project" />
@@ -107,11 +111,8 @@
     <orderEntry type="library" name="Gradle: xml-apis:xml-apis:1.0.b2" level="project" />
     <orderEntry type="library" name="Gradle: net.minidev:accessors-smart:1.1" level="project" />
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.1.11" level="project" />
-    <orderEntry type="library" name="Gradle: io.swagger:swagger-annotations:1.5.13" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.guava:guava:20.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.mapstruct:mapstruct:1.1.0.Final" level="project" />
-    <orderEntry type="library" name="Gradle: org.ow2.asm:asm:5.0.3" level="project" />
     <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy:1.6.14" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm:5.0.3" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="seller_main" />
 </module>
