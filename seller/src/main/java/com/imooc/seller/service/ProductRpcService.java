@@ -8,6 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -15,35 +18,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ProductRpcService {
+public class ProductRpcService implements ApplicationListener<ContextRefreshedEvent> {
 
     private static Logger LOG = LoggerFactory.getLogger(ProductRpcService.class);
 
     @Autowired
     private ProductRpc productRpc;
 
-    public List<Product> findAll() {
-        ProductRpcReq req = new ProductRpcReq();
-        List<String> status = new ArrayList<>();
-        status.add(ProductStatus.IN_SELL.name());
-        req.setStatusList(status);
+    @Autowired
+    private ProductCache productCache;
 
-        LOG.info("rpc查询全部产品,请求:{}", req);
-        List<Product> result = productRpc.query(req);
-        LOG.info("rpc查询全部产品,结果:{}", result);
-        return result;
-    }
 
-    @Cacheable(cacheNames = "imooc_product")
     public Product findOne(String id) {
-        LOG.info("rpc查询单一产品,请求:{}", id);
-        Product result = productRpc.findOne(id);
-        LOG.info("rpc查询单一产品,结果:{}", result);
+        Product result = productCache.readCache(id);
+        if (result == null) {
+            productCache.removeCache(id);
+        }
         return result;
     }
 
-    @PostConstruct
+    public List<Product> findAll() {
+        return productCache.readAllCaches();
+    }
+
+    //@PostConstruct
     public void testFindAll() {
         findAll();
+    }
+
+    @Override
+    public void onApplicationEvent(ContextRefreshedEvent event) {
+        List<Product> products = findAll();
+        LOG.warn("初始化所有销售中的产品到缓存:{}", products);
+        products.forEach(product -> productCache.putCache(product));
     }
 }
