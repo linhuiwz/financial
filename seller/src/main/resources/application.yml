@@ -13,7 +13,7 @@ spring:
   cache:
     type: hazelcast
   activemq:
-    broker-url: tcp://10.5.16.14:61616
+    broker-url: tcp://192.168.31.25:61616
     packages:
       trust-all: true
   datasource:
