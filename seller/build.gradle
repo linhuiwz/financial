@@ -3,5 +3,6 @@ dependencies{
     compile project(":util")
     compile project(":swagger")
     compile libs.hazelcast
+    compile libs.activemq
     compile libs.mysql
 }
