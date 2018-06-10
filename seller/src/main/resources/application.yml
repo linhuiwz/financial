@@ -10,6 +10,8 @@ rpc:
     url:  http://localhost:8081/manager
     basePackage: com.imooc.api
 spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
   cache:
     type: hazelcast
   activemq:

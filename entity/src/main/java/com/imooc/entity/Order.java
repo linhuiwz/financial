@@ -40,10 +40,10 @@ public class Order {
 
     private String memo;
 
-    @JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createAt;
 
-    @JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateAt;
 
     @Override

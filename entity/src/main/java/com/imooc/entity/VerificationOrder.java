@@ -1,20 +1,30 @@
-package com.imooc.seller.params;
+package com.imooc.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.imooc.seller.sign.SignText;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 下单请求参数
+ * 订单
  */
-public class OrderParam implements SignText {
+@Entity
+public class VerificationOrder {
+    @Id
+    private String orderId;
 
+    //渠道id
     private String chanId;
 
     private String chanUserId;
+
+    /**
+     * @see com.imooc.entity.enums.OrderType
+     */
+    private String orderType;
 
     private String productId;
 
@@ -22,10 +32,22 @@ public class OrderParam implements SignText {
 
     private String outerOrderId;
 
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createAt;
 
-    private String memo;
+    @Override
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this);
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
 
     public String getChanId() {
         return chanId;
@@ -41,6 +63,14 @@ public class OrderParam implements SignText {
 
     public void setChanUserId(String chanUserId) {
         this.chanUserId = chanUserId;
+    }
+
+    public String getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(String orderType) {
+        this.orderType = orderType;
     }
 
     public String getProductId() {
@@ -67,6 +97,7 @@ public class OrderParam implements SignText {
         this.outerOrderId = outerOrderId;
     }
 
+
     public Date getCreateAt() {
         return createAt;
     }
@@ -75,16 +106,5 @@ public class OrderParam implements SignText {
         this.createAt = createAt;
     }
 
-    public String getMemo() {
-        return memo;
-    }
 
-    public void setMemo(String memo) {
-        this.memo = memo;
-    }
-
-    @Override
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this);
-    }
 }

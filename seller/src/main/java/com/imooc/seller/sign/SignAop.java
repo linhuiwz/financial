@@ -22,7 +22,7 @@ public class SignAop {
     public void verify(String authId, String sign, SignText text) {
         //authId应该保存在数据库或者配置文件，由对方提供，这里简化。
         String publicKey = signService.getPublicKey(authId);
-        Assert.isTrue(RSAUtil.verify(text.toText(), sign, publicKey), "验签失败！");
+        Assert.isTrue(RSAUtil.verify(text.toText(), sign, publicKey), "验签失败:" + text.toText());
     }
 
 }
