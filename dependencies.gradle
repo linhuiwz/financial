@@ -29,6 +29,7 @@ ext {
             rsa:[
                     'commons-codec:commons-codec:1.8'
             ],
+            lombok:["org.projectlombok:lombok:1.16.18"],
             test   : [
                     "org.springframework.boot:spring-boot-starter-test:${versions.springBootVersion}"
 
